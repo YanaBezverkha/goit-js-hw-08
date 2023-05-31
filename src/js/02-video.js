@@ -21,10 +21,14 @@ const save = (key, value) => {
 
 const iframe = document.querySelector('iframe');
 const player = new Player(iframe);
+
 player.on('timeupdate', throttle(onPlay, 1000))
 
 function onPlay(evt){
  save("videoplayer-current-time", evt.seconds);
 }
+
 const timePlayed = load("videoplayer-current-time")
-player.setCurrentTime(timePlayed)
+if(timePlayed){
+player.setCurrentTime(timePlayed);
+}
