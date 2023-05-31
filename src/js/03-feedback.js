@@ -29,11 +29,12 @@ function onInput() {
 }
 
 function onSubmit(event) {
+  if(email.value !== "" && message.value !== ""){
   event.preventDefault();
   const formValue = load('feedback-form-state');
   localStorage.removeItem('feedback-form-state');
   console.log(formValue);
-  formEl.reset();
+  formEl.reset();}
 }
 
 if (load('feedback-form-state')) {
