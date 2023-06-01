@@ -29,8 +29,8 @@ function onInput() {
 }
 
 function onSubmit(event) {
-  if(email.value !== "" && message.value !== ""){
   event.preventDefault();
+  if(email.value !== "" && message.value !== ""){
   const formValue = load('feedback-form-state');
   localStorage.removeItem('feedback-form-state');
   console.log(formValue);
